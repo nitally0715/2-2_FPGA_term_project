@@ -1,0 +1,63 @@
+# Vivado project files
+*.jou
+*.log
+*.str
+*.zip
+*.gz
+*.xml
+*.html
+*.wdb
+*.pb
+*.poli
+*.tcl.backup
+
+# Vivado generated folders
+.cache/
+.hw/
+.ip_user_files/
+.sim/
+.simulation/
+.Xil/
+runs/
+reports/
+project_*/         # Vivado가 자동으로 생성하는 project_xxx 폴더
+*.srcs/sources_1/ip/
+*.srcs/sources_1/ipshared/
+*.srcs/sources_1/bd/
+*.srcs/sources_1/imports/
+*.srcs/sim_1/
+
+# Checkpoints
+*.dcp
+
+# Hardware handoff & export files
+*.xsa
+*.hdf
+
+# SDK / Vitis
+.sdk/
+.vitis/
+.metadata/
+.mds/
+
+# Simulation output files
+*.vcd
+*.wlf
+*.vpd
+*.key
+*.svf
+*.sdf
+*.jou
+*.pb
+*.rpt
+
+# Temporary and lock files
+*.tmp
+*.temp
+*.lock
+
+# OS / Editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
