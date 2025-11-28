@@ -42,9 +42,9 @@ module Roulette_LED(
     reg [31:0] interval;       // 현재 딜레이 (작을수록 빠름)
 
     // 고속 회전 기본속도 & 감속 증가량
-    localparam BASE_SPEED   = 32'd50000;   // 50MHz 기준 ≒ 1ms
-    localparam SLOW_STEP    = 32'd25000;   // 감속 단계 증가량
-    localparam MAX_INTERVAL = 32'd400000;  // 감속 한계
+    localparam BASE_SPEED   = 32'd2_000_000;   // 50MHz 기준 ≒ 40ms
+    localparam SLOW_STEP    = 32'd200_000;     // 감속 단계 증가량
+    localparam MAX_INTERVAL = 32'd12_000_000;  // 감속 한계
 
     //==========================================================
     // 3. LFSR(난수 생성)

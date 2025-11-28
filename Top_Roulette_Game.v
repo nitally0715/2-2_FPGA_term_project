@@ -240,6 +240,13 @@ module Top_Roulette(
         .current_money (current_money),
         .win_flag      (win_flag),
         .money_zero    (money_zero),
+        // 사용자 입력 
+        .num_store_idx (num_store_idx),
+        .user_num0     (user_num0),
+        .user_num1     (user_num1),
+        .user_num2     (user_num2),
+        .user_num3     (user_num3),
+        
         .line1         (lcd_line1),
         .line2         (lcd_line2)
     );
