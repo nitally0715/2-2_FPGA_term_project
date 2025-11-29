@@ -148,7 +148,7 @@ module Top_Roulette(
         end else begin
             prev_state <= fsm_state;
 
-            if (reset_round) begin
+            if (reset_round || clear_input) begin
                 num_store_idx <= 2'd0;
                 user_num0     <= 3'd0;
                 user_num1     <= 3'd0;
@@ -164,7 +164,7 @@ module Top_Roulette(
                     user_num3     <= 3'd0;
                 end
                 else if (fsm_state == S_NUMBER_INPUT && key_valid) begin
-                    if (key_value == 4'd12) begin   // '#'
+                    if (key_value == 4'd11) begin   // '#'
                         num_store_idx <= 2'd0;
                         user_num0     <= 3'd0;
                         user_num1     <= 3'd0;
@@ -194,6 +194,8 @@ module Top_Roulette(
     wire [2:0] hit_count;
 
     Hit_Check hit_checker(
+        .clk       (clk),
+        .rst       (rst),
         .bet_count  (bet_count),
         .result_pos (result_pos),
         .user_num0  (user_num0),
