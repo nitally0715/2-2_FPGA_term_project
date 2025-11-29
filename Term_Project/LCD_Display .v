@@ -118,7 +118,7 @@ module LCD_Display(
                 end
                 
                 // 2. BET_MONEY: 베팅 금액 입력
-                S_BET_SELECT: begin
+                S_BET_MONEY: begin
                     l1[0] <= "B"; l1[1] <= "E"; l1[2] <= "T"; l1[3] <= " ";
                     l1[4] <= "M"; l1[5] <= "O"; l1[6] <= "N"; l1[7] <= "E";
                     l1[8] <= "Y"; l1[9] <= " "; l1[10] <= "("; l1[11] <= "O";
