@@ -1,0 +1,521 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Fri Nov 28 14:47:07 2025
+# Process ID: 24512
+# Current directory: C:/Users/sosez/Logical_Design_Project/Term_Project/Term_Project.runs/synth_1
+# Command line: vivado.exe -log Top_Roulette.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Top_Roulette.tcl
+# Log file: C:/Users/sosez/Logical_Design_Project/Term_Project/Term_Project.runs/synth_1/Top_Roulette.vds
+# Journal file: C:/Users/sosez/Logical_Design_Project/Term_Project/Term_Project.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source Top_Roulette.tcl -notrace
+Command: synth_design -top Top_Roulette -part xc7s75fgga484-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7s75'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7s75'
+INFO: [Device 21-403] Loading part xc7s75fgga484-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 20396
+WARNING: [Synth 8-2292] literal value truncated to fit in 2 bits [C:/Users/sosez/Logical_Design_Project/Term_Project/Top_Roulette_Game.v:175]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1027.980 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'Top_Roulette' [C:/Users/sosez/Logical_Design_Project/Term_Project/Top_Roulette_Game.v:6]
+	Parameter S_IDLE bound to: 4'b0000 
+	Parameter S_BET_MONEY bound to: 4'b0001 
+	Parameter S_BET_SELECT bound to: 4'b0010 
+	Parameter S_NUMBER_INPUT bound to: 4'b0011 
+	Parameter S_START_SPIN bound to: 4'b0100 
+	Parameter S_SLOW_DOWN bound to: 4'b0101 
+	Parameter S_STOP_RESULT bound to: 4'b0110 
+	Parameter S_WIN_DISPLAY bound to: 4'b0111 
+	Parameter S_LOSE_DISPLAY bound to: 4'b1000 
+	Parameter S_UPDATE_MONEY bound to: 4'b1001 
+	Parameter S_CHECK_MONEY bound to: 4'b1010 
+	Parameter S_NEXT_STAGE bound to: 4'b1011 
+	Parameter S_GAME_OVER bound to: 4'b1100 
+	Parameter S_GAME_CLEAR bound to: 4'b1101 
+INFO: [Synth 8-6157] synthesizing module 'Button_Keypad' [C:/Users/sosez/Logical_Design_Project/Term_Project/Button_Keypad.v:6]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sosez/Logical_Design_Project/Term_Project/Button_Keypad.v:47]
+INFO: [Synth 8-6155] done synthesizing module 'Button_Keypad' (1#1) [C:/Users/sosez/Logical_Design_Project/Term_Project/Button_Keypad.v:6]
+INFO: [Synth 8-6157] synthesizing module 'FSM_Controller' [C:/Users/sosez/Logical_Design_Project/Term_Project/FSM_Controller.v:6]
+	Parameter S_IDLE bound to: 4'b0000 
+	Parameter S_BET_MONEY bound to: 4'b0001 
+	Parameter S_BET_SELECT bound to: 4'b0010 
+	Parameter S_NUMBER_INPUT bound to: 4'b0011 
+	Parameter S_START_SPIN bound to: 4'b0100 
+	Parameter S_SLOW_DOWN bound to: 4'b0101 
+	Parameter S_STOP_RESULT bound to: 4'b0110 
+	Parameter S_WIN_DISPLAY bound to: 4'b0111 
+	Parameter S_LOSE_DISPLAY bound to: 4'b1000 
+	Parameter S_UPDATE_MONEY bound to: 4'b1001 
+	Parameter S_CHECK_MONEY bound to: 4'b1010 
+	Parameter S_NEXT_STAGE bound to: 4'b1011 
+	Parameter S_GAME_OVER bound to: 4'b1100 
+	Parameter S_GAME_CLEAR bound to: 4'b1101 
+INFO: [Synth 8-6155] done synthesizing module 'FSM_Controller' (2#1) [C:/Users/sosez/Logical_Design_Project/Term_Project/FSM_Controller.v:6]
+WARNING: [Synth 8-7071] port 'user_num0' of module 'FSM_Controller' is unconnected for instance 'fsm' [C:/Users/sosez/Logical_Design_Project/Term_Project/Top_Roulette_Game.v:95]
+WARNING: [Synth 8-7071] port 'user_num1' of module 'FSM_Controller' is unconnected for instance 'fsm' [C:/Users/sosez/Logical_Design_Project/Term_Project/Top_Roulette_Game.v:95]
+WARNING: [Synth 8-7071] port 'user_num2' of module 'FSM_Controller' is unconnected for instance 'fsm' [C:/Users/sosez/Logical_Design_Project/Term_Project/Top_Roulette_Game.v:95]
+WARNING: [Synth 8-7071] port 'user_num3' of module 'FSM_Controller' is unconnected for instance 'fsm' [C:/Users/sosez/Logical_Design_Project/Term_Project/Top_Roulette_Game.v:95]
+WARNING: [Synth 8-7023] instance 'fsm' of module 'FSM_Controller' has 20 connections declared, but only 16 given [C:/Users/sosez/Logical_Design_Project/Term_Project/Top_Roulette_Game.v:95]
+INFO: [Synth 8-6157] synthesizing module 'Roulette_LED' [C:/Users/sosez/Logical_Design_Project/Term_Project/Roulette_LED.v:9]
+	Parameter S_IDLE bound to: 2'b00 
+	Parameter S_RUN bound to: 2'b01 
+	Parameter S_SLOW bound to: 2'b10 
+	Parameter S_STOP bound to: 2'b11 
+	Parameter BASE_SPEED bound to: 2000000 - type: integer 
+	Parameter SLOW_STEP bound to: 200000 - type: integer 
+	Parameter MAX_INTERVAL bound to: 12000000 - type: integer 
+INFO: [Synth 8-226] default block is never used [C:/Users/sosez/Logical_Design_Project/Term_Project/Roulette_LED.v:78]
+INFO: [Synth 8-226] default block is never used [C:/Users/sosez/Logical_Design_Project/Term_Project/Roulette_LED.v:136]
+INFO: [Synth 8-6155] done synthesizing module 'Roulette_LED' (3#1) [C:/Users/sosez/Logical_Design_Project/Term_Project/Roulette_LED.v:9]
+INFO: [Synth 8-6157] synthesizing module 'Hit_Check' [C:/Users/sosez/Logical_Design_Project/Term_Project/Hit_Check.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Hit_Check' (4#1) [C:/Users/sosez/Logical_Design_Project/Term_Project/Hit_Check.v:6]
+WARNING: [Synth 8-7071] port 'clk' of module 'Hit_Check' is unconnected for instance 'hit_checker' [C:/Users/sosez/Logical_Design_Project/Term_Project/Top_Roulette_Game.v:196]
+WARNING: [Synth 8-7071] port 'rst' of module 'Hit_Check' is unconnected for instance 'hit_checker' [C:/Users/sosez/Logical_Design_Project/Term_Project/Top_Roulette_Game.v:196]
+WARNING: [Synth 8-7023] instance 'hit_checker' of module 'Hit_Check' has 10 connections declared, but only 8 given [C:/Users/sosez/Logical_Design_Project/Term_Project/Top_Roulette_Game.v:196]
+INFO: [Synth 8-6157] synthesizing module 'Money_Manager' [C:/Users/sosez/Logical_Design_Project/Term_Project/Money_Manager.v:6]
+	Parameter INITIAL_MONEY bound to: 16'b0000000001100100 
+	Parameter MAX_MONEY bound to: 16'b0010011100010000 
+INFO: [Synth 8-6155] done synthesizing module 'Money_Manager' (5#1) [C:/Users/sosez/Logical_Design_Project/Term_Project/Money_Manager.v:6]
+INFO: [Synth 8-6157] synthesizing module 'LCD_Display' [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:5]
+	Parameter S_IDLE bound to: 4'b0000 
+	Parameter S_BET_MONEY bound to: 4'b0001 
+	Parameter S_BET_SELECT bound to: 4'b0010 
+	Parameter S_NUMBER_INPUT bound to: 4'b0011 
+	Parameter S_START_SPIN bound to: 4'b0100 
+	Parameter S_SLOW_DOWN bound to: 4'b0101 
+	Parameter S_STOP_RESULT bound to: 4'b0110 
+	Parameter S_WIN_DISPLAY bound to: 4'b0111 
+	Parameter S_LOSE_DISPLAY bound to: 4'b1000 
+	Parameter S_UPDATE_MONEY bound to: 4'b1001 
+	Parameter S_CHECK_MONEY bound to: 4'b1010 
+	Parameter S_NEXT_STAGE bound to: 4'b1011 
+	Parameter S_GAME_OVER bound to: 4'b1100 
+	Parameter S_GAME_CLEAR bound to: 4'b1101 
+WARNING: [Synth 8-151] case item 4'b0010 is unreachable [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:102]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:106]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:106]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:106]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:106]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:107]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:107]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:107]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:107]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:108]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:108]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:108]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:108]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:109]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:109]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:109]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:109]
+WARNING: [Synth 8-6090] variable 'l2' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:111]
+WARNING: [Synth 8-6090] variable 'l2' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:111]
+WARNING: [Synth 8-6090] variable 'l2' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:111]
+WARNING: [Synth 8-6090] variable 'l2' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:111]
+WARNING: [Synth 8-6090] variable 'l2' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:112]
+WARNING: [Synth 8-6090] variable 'l2' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:112]
+WARNING: [Synth 8-6090] variable 'l2' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:112]
+WARNING: [Synth 8-6090] variable 'l2' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:113]
+WARNING: [Synth 8-6090] variable 'l2' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:114]
+WARNING: [Synth 8-6090] variable 'l2' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:115]
+WARNING: [Synth 8-6090] variable 'l2' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:116]
+WARNING: [Synth 8-6090] variable 'l2' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:117]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:122]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:122]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:122]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:122]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:123]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:123]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:123]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:123]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:124]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:124]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:124]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:124]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:125]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:125]
+WARNING: [Synth 8-6090] variable 'l2' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:127]
+WARNING: [Synth 8-6090] variable 'l2' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:127]
+WARNING: [Synth 8-6090] variable 'l2' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:127]
+WARNING: [Synth 8-6090] variable 'l2' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:128]
+WARNING: [Synth 8-6090] variable 'l2' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:129]
+WARNING: [Synth 8-6090] variable 'l2' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:130]
+WARNING: [Synth 8-6090] variable 'l2' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:131]
+WARNING: [Synth 8-6090] variable 'l2' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:132]
+WARNING: [Synth 8-6090] variable 'l2' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:133]
+WARNING: [Synth 8-6090] variable 'l2' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:133]
+WARNING: [Synth 8-6090] variable 'l2' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:133]
+WARNING: [Synth 8-6090] variable 'l2' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:134]
+WARNING: [Synth 8-6090] variable 'l2' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:135]
+WARNING: [Synth 8-6090] variable 'l2' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:136]
+WARNING: [Synth 8-6090] variable 'l2' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:137]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:157]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:157]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:157]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:157]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:158]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:158]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:158]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:158]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:159]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:159]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:159]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:159]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:160]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:160]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:160]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:160]
+WARNING: [Synth 8-6090] variable 'l2' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:162]
+WARNING: [Synth 8-6090] variable 'l2' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:162]
+WARNING: [Synth 8-6090] variable 'l2' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:162]
+WARNING: [Synth 8-6090] variable 'l2' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:162]
+WARNING: [Synth 8-6090] variable 'l2' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:163]
+WARNING: [Synth 8-6090] variable 'l2' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:163]
+WARNING: [Synth 8-6090] variable 'l2' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:164]
+WARNING: [Synth 8-6090] variable 'l2' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:165]
+WARNING: [Synth 8-6090] variable 'l2' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:166]
+WARNING: [Synth 8-6090] variable 'l2' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:167]
+WARNING: [Synth 8-6090] variable 'l2' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:169]
+WARNING: [Synth 8-6090] variable 'l2' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:169]
+WARNING: [Synth 8-6090] variable 'l2' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:170]
+WARNING: [Synth 8-6090] variable 'l2' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:170]
+WARNING: [Synth 8-6090] variable 'l2' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:170]
+WARNING: [Synth 8-6090] variable 'l2' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:170]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:175]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:175]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:175]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:175]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:176]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:176]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:176]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:176]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:177]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:177]
+WARNING: [Synth 8-6090] variable 'l1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:177]
+INFO: [Common 17-14] Message 'Synth 8-6090' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:102]
+INFO: [Synth 8-6155] done synthesizing module 'LCD_Display' (6#1) [C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v:5]
+INFO: [Synth 8-6157] synthesizing module 'TextLCD_Controller' [C:/Users/sosez/Logical_Design_Project/Term_Project/TextLCD_Controller.v:8]
+	Parameter INIT_1 bound to: 4'b0000 
+	Parameter INIT_2 bound to: 4'b0001 
+	Parameter INIT_3 bound to: 4'b0010 
+	Parameter INIT_4 bound to: 4'b0011 
+	Parameter SET_LINE1_ADDR bound to: 4'b0100 
+	Parameter WRITE_LINE1 bound to: 4'b0101 
+	Parameter SET_LINE2_ADDR bound to: 4'b0110 
+	Parameter WRITE_LINE2 bound to: 4'b0111 
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/sosez/Logical_Design_Project/Term_Project/TextLCD_Controller.v:106]
+INFO: [Synth 8-6155] done synthesizing module 'TextLCD_Controller' (7#1) [C:/Users/sosez/Logical_Design_Project/Term_Project/TextLCD_Controller.v:8]
+INFO: [Synth 8-6157] synthesizing module 'SevenSegment_Display' [C:/Users/sosez/Logical_Design_Project/Term_Project/SevenSegment_Display.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'SevenSegment_Display' (8#1) [C:/Users/sosez/Logical_Design_Project/Term_Project/SevenSegment_Display.v:9]
+INFO: [Synth 8-6157] synthesizing module 'Piezo_Buzzer' [C:/Users/sosez/Logical_Design_Project/Term_Project/Piezo_Buzzer.v:7]
+	Parameter S_IDLE bound to: 4'b0000 
+	Parameter S_BET_MONEY bound to: 4'b0001 
+	Parameter S_BET_SELECT bound to: 4'b0010 
+	Parameter S_NUMBER_INPUT bound to: 4'b0011 
+	Parameter S_START_SPIN bound to: 4'b0100 
+	Parameter S_SLOW_DOWN bound to: 4'b0101 
+	Parameter S_STOP_RESULT bound to: 4'b0110 
+	Parameter S_WIN_DISPLAY bound to: 4'b0111 
+	Parameter S_LOSE_DISPLAY bound to: 4'b1000 
+	Parameter S_UPDATE_MONEY bound to: 4'b1001 
+	Parameter S_CHECK_MONEY bound to: 4'b1010 
+	Parameter S_NEXT_STAGE bound to: 4'b1011 
+	Parameter S_GAME_OVER bound to: 4'b1100 
+	Parameter S_GAME_CLEAR bound to: 4'b1101 
+INFO: [Synth 8-6155] done synthesizing module 'Piezo_Buzzer' (9#1) [C:/Users/sosez/Logical_Design_Project/Term_Project/Piezo_Buzzer.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'Top_Roulette' (10#1) [C:/Users/sosez/Logical_Design_Project/Term_Project/Top_Roulette_Game.v:6]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1027.980 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1027.980 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1027.980 ; gain = 0.000
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 1027.980 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/sosez/Logical_Design_Project/Term_Project/Term_Project.srcs/constrs_1/new/Term_Project.xdc]
+WARNING: [Vivado 12-584] No ports matched 'kp_col[2]'. [C:/Users/sosez/Logical_Design_Project/Term_Project/Term_Project.srcs/constrs_1/new/Term_Project.xdc:20]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/sosez/Logical_Design_Project/Term_Project/Term_Project.srcs/constrs_1/new/Term_Project.xdc:20]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'kp_col[1]'. [C:/Users/sosez/Logical_Design_Project/Term_Project/Term_Project.srcs/constrs_1/new/Term_Project.xdc:21]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/sosez/Logical_Design_Project/Term_Project/Term_Project.srcs/constrs_1/new/Term_Project.xdc:21]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'kp_col[0]'. [C:/Users/sosez/Logical_Design_Project/Term_Project/Term_Project.srcs/constrs_1/new/Term_Project.xdc:22]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/sosez/Logical_Design_Project/Term_Project/Term_Project.srcs/constrs_1/new/Term_Project.xdc:22]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'kp_row[3]'. [C:/Users/sosez/Logical_Design_Project/Term_Project/Term_Project.srcs/constrs_1/new/Term_Project.xdc:23]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/sosez/Logical_Design_Project/Term_Project/Term_Project.srcs/constrs_1/new/Term_Project.xdc:23]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'kp_row[2]'. [C:/Users/sosez/Logical_Design_Project/Term_Project/Term_Project.srcs/constrs_1/new/Term_Project.xdc:24]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/sosez/Logical_Design_Project/Term_Project/Term_Project.srcs/constrs_1/new/Term_Project.xdc:24]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'kp_row[1]'. [C:/Users/sosez/Logical_Design_Project/Term_Project/Term_Project.srcs/constrs_1/new/Term_Project.xdc:25]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/sosez/Logical_Design_Project/Term_Project/Term_Project.srcs/constrs_1/new/Term_Project.xdc:25]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'kp_row[0]'. [C:/Users/sosez/Logical_Design_Project/Term_Project/Term_Project.srcs/constrs_1/new/Term_Project.xdc:26]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/sosez/Logical_Design_Project/Term_Project/Term_Project.srcs/constrs_1/new/Term_Project.xdc:26]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [C:/Users/sosez/Logical_Design_Project/Term_Project/Term_Project.srcs/constrs_1/new/Term_Project.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/sosez/Logical_Design_Project/Term_Project/Term_Project.srcs/constrs_1/new/Term_Project.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Top_Roulette_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/Top_Roulette_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1050.910 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1050.910 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1050.910 ; gain = 22.930
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7s75fgga484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1050.910 ; gain = 22.930
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1050.910 ; gain = 22.930
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'Roulette_LED'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'TextLCD_Controller'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  S_IDLE |                               00 |                               00
+                   S_RUN |                               01 |                               01
+                  S_SLOW |                               10 |                               10
+                  S_STOP |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'Roulette_LED'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  INIT_1 |                              000 |                             0000
+                  INIT_2 |                              001 |                             0001
+                  INIT_3 |                              010 |                             0010
+                  INIT_4 |                              011 |                             0011
+          SET_LINE1_ADDR |                              100 |                             0100
+             WRITE_LINE1 |                              101 |                             0101
+          SET_LINE2_ADDR |                              110 |                             0110
+             WRITE_LINE2 |                              111 |                             0111
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'TextLCD_Controller'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1050.910 ; gain = 22.930
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 1     
+	   4 Input   32 Bit       Adders := 1     
+	   2 Input   24 Bit       Adders := 1     
+	   3 Input   16 Bit       Adders := 1     
+	   2 Input   16 Bit       Adders := 1     
+	   2 Input    7 Bit       Adders := 4     
+	   2 Input    5 Bit       Adders := 1     
+	   2 Input    3 Bit       Adders := 3     
+	   4 Input    3 Bit       Adders := 1     
+	   2 Input    2 Bit       Adders := 1     
++---XORs : 
+	   4 Input      1 Bit         XORs := 1     
++---Registers : 
+	               32 Bit    Registers := 2     
+	               16 Bit    Registers := 3     
+	               12 Bit    Registers := 1     
+	                8 Bit    Registers := 35    
+	                7 Bit    Registers := 1     
+	                5 Bit    Registers := 2     
+	                4 Bit    Registers := 7     
+	                3 Bit    Registers := 7     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 18    
++---Muxes : 
+	   4 Input   32 Bit        Muxes := 2     
+	   2 Input   32 Bit        Muxes := 1     
+	   4 Input   19 Bit        Muxes := 1     
+	   2 Input   17 Bit        Muxes := 2     
+	   4 Input   17 Bit        Muxes := 1     
+	   5 Input   17 Bit        Muxes := 1     
+	  15 Input   16 Bit        Muxes := 1     
+	   2 Input   16 Bit        Muxes := 8     
+	   4 Input   16 Bit        Muxes := 1     
+	  13 Input    8 Bit        Muxes := 1     
+	   8 Input    8 Bit        Muxes := 1     
+	  13 Input    7 Bit        Muxes := 17    
+	   8 Input    7 Bit        Muxes := 2     
+	  13 Input    6 Bit        Muxes := 2     
+	   8 Input    5 Bit        Muxes := 1     
+	   6 Input    5 Bit        Muxes := 1     
+	  13 Input    4 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 2     
+	   3 Input    4 Bit        Muxes := 1     
+	  15 Input    4 Bit        Muxes := 1     
+	  15 Input    3 Bit        Muxes := 2     
+	   2 Input    3 Bit        Muxes := 4     
+	   4 Input    3 Bit        Muxes := 1     
+	  13 Input    3 Bit        Muxes := 2     
+	   8 Input    3 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 5     
+	   4 Input    2 Bit        Muxes := 1     
+	  13 Input    1 Bit        Muxes := 1     
+	  15 Input    1 Bit        Muxes := 11    
+	   2 Input    1 Bit        Muxes := 32    
+	   4 Input    1 Bit        Muxes := 11    
+	   8 Input    1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 140 (col length:80)
+BRAMs: 180 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:37 ; elapsed = 00:00:40 . Memory (MB): peak = 1116.117 ; gain = 88.137
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:45 ; elapsed = 00:00:48 . Memory (MB): peak = 1116.117 ; gain = 88.137
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:45 ; elapsed = 00:00:48 . Memory (MB): peak = 1116.117 ; gain = 88.137
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:47 ; elapsed = 00:00:50 . Memory (MB): peak = 1202.012 ; gain = 174.031
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:51 ; elapsed = 00:00:54 . Memory (MB): peak = 1207.766 ; gain = 179.785
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:51 ; elapsed = 00:00:54 . Memory (MB): peak = 1207.766 ; gain = 179.785
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:51 ; elapsed = 00:00:54 . Memory (MB): peak = 1207.766 ; gain = 179.785
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:51 ; elapsed = 00:00:54 . Memory (MB): peak = 1207.766 ; gain = 179.785
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:51 ; elapsed = 00:00:54 . Memory (MB): peak = 1207.766 ; gain = 179.785
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:51 ; elapsed = 00:00:54 . Memory (MB): peak = 1207.766 ; gain = 179.785
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |   148|
+|3     |LUT1   |    26|
+|4     |LUT2   |   439|
+|5     |LUT3   |   206|
+|6     |LUT4   |   378|
+|7     |LUT5   |   156|
+|8     |LUT6   |   360|
+|9     |MUXF7  |    24|
+|10    |MUXF8  |    12|
+|11    |FDCE   |   419|
+|12    |FDPE   |    53|
+|13    |IBUF   |    14|
+|14    |OBUF   |    32|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:51 ; elapsed = 00:00:54 . Memory (MB): peak = 1207.766 ; gain = 179.785
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:40 ; elapsed = 00:00:52 . Memory (MB): peak = 1207.766 ; gain = 156.855
+Synthesis Optimization Complete : Time (s): cpu = 00:00:51 ; elapsed = 00:00:55 . Memory (MB): peak = 1207.766 ; gain = 179.785
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.031 . Memory (MB): peak = 1207.766 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 184 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1207.766 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+45 Infos, 117 Warnings, 7 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:58 ; elapsed = 00:01:04 . Memory (MB): peak = 1207.766 ; gain = 179.785
+INFO: [Common 17-1381] The checkpoint 'C:/Users/sosez/Logical_Design_Project/Term_Project/Term_Project.runs/synth_1/Top_Roulette.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file Top_Roulette_utilization_synth.rpt -pb Top_Roulette_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri Nov 28 14:48:16 2025...
