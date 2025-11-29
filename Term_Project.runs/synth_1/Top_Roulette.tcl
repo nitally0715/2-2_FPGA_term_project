@@ -71,6 +71,7 @@ proc create_report { reportName command } {
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 2
+set_param synth.incrementalSynthesisCache C:/Users/sosez/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-34732-DESKTOP-UGV0O34/incrSyn
 set_param xicom.use_bs_reader 1
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
@@ -92,7 +93,7 @@ read_verilog -library xil_defaultlib {
   C:/Users/sosez/Logical_Design_Project/Term_Project/Button_Keypad.v
   C:/Users/sosez/Logical_Design_Project/Term_Project/FSM_Controller.v
   C:/Users/sosez/Logical_Design_Project/Term_Project/Hit_Check.v
-  {C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display .v}
+  C:/Users/sosez/Logical_Design_Project/Term_Project/LCD_Display.v
   C:/Users/sosez/Logical_Design_Project/Term_Project/Money_Manager.v
   C:/Users/sosez/Logical_Design_Project/Term_Project/Piezo_Buzzer.v
   C:/Users/sosez/Logical_Design_Project/Term_Project/Roulette_LED.v

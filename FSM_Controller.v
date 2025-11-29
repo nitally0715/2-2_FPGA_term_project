@@ -28,10 +28,10 @@ module FSM_Controller(
     output reg         reset_round,    // 한 판/게임 리셋용 (1클럭)
 
     // Hit_Check 용 유저 선택 번호 4개
-    output reg  [3:0]  user_num0,
-    output reg  [3:0]  user_num1,
-    output reg  [3:0]  user_num2,
-    output reg  [3:0]  user_num3
+    output reg  [2:0]  user_num0,
+    output reg  [2:0]  user_num1,
+    output reg  [2:0]  user_num2,
+    output reg  [2:0]  user_num3
 );
 
     //==========================================================
@@ -71,10 +71,10 @@ module FSM_Controller(
             reset_round      <= 1'b0;
 
             // 유저 번호 초기화
-            user_num0        <= 4'd0;
-            user_num1        <= 4'd0;
-            user_num2        <= 4'd0;
-            user_num3        <= 4'd0;
+            user_num0       <= 3'd0;
+            user_num1       <= 3'd0;
+            user_num2       <= 3'd0;
+            user_num3       <= 3'd0;
         end else begin
             state <= state_next;
 
@@ -97,10 +97,10 @@ module FSM_Controller(
                         numbers_entered <= 3'd0;
 
                         // 유저 번호 초기화
-                        user_num0       <= 4'd0;
-                        user_num1       <= 4'd0;
-                        user_num2       <= 4'd0;
-                        user_num3       <= 4'd0;
+                        user_num0       <= 3'd0;
+                        user_num1       <= 3'd0;
+                        user_num2       <= 3'd0;
+                        user_num3       <= 3'd0;
                     end
                 end
 
@@ -161,10 +161,10 @@ module FSM_Controller(
                             // 유효 번호 입력 + 아직 더 받을 수 있을 때
                             if (numbers_entered < bet_count) begin
                                 case (numbers_entered)
-                                    3'd0: user_num0 <= key_value;
-                                    3'd1: user_num1 <= key_value;
-                                    3'd2: user_num2 <= key_value;
-                                    3'd3: user_num3 <= key_value;
+                                    3'd0: user_num0 <= key_value[2:0] - 3'd1;
+                                    3'd1: user_num1 <= key_value[2:0] - 3'd1;
+                                    3'd2: user_num2 <= key_value[2:0] - 3'd1;
+                                    3'd3: user_num3 <= key_value[2:0] - 3'd1;
                                     default: ; // do nothing
                                 endcase
                                 numbers_entered <= numbers_entered + 3'd1;
@@ -175,10 +175,10 @@ module FSM_Controller(
                             numbers_entered <= 3'd0;
                             clear_input     <= 1'b1;
 
-                            user_num0       <= 4'd0;
-                            user_num1       <= 4'd0;
-                            user_num2       <= 4'd0;
-                            user_num3       <= 4'd0;
+                            user_num0       <= 3'd0;
+                            user_num1       <= 3'd0;
+                            user_num2       <= 3'd0;
+                            user_num3       <= 3'd0;
 
                         end else if (key_value == 4'd10) begin
                             // '*' : 확정 시도
@@ -186,10 +186,10 @@ module FSM_Controller(
                                 numbers_entered <= 3'd0;
                                 clear_input     <= 1'b1;
 
-                                user_num0       <= 4'd0;
-                                user_num1       <= 4'd0;
-                                user_num2       <= 4'd0;
-                                user_num3       <= 4'd0;
+                                user_num0       <= 3'd0;
+                                user_num1       <= 3'd0;
+                                user_num2       <= 3'd0;
+                                user_num3       <= 3'd0;
                             end
                         end
                     end
@@ -254,10 +254,10 @@ module FSM_Controller(
                         bet_count       <= 3'd0;
                         numbers_entered <= 3'd0;
 
-                        user_num0       <= 4'd0;
-                        user_num1       <= 4'd0;
-                        user_num2       <= 4'd0;
-                        user_num3       <= 4'd0;
+                        user_num0       <= 3'd0;
+                        user_num1       <= 3'd0;
+                        user_num2       <= 3'd0;
+                        user_num3       <= 3'd0;
                     end
                 end
 
@@ -271,10 +271,10 @@ module FSM_Controller(
                         bet_count       <= 3'd0;
                         numbers_entered <= 3'd0;
 
-                        user_num0       <= 4'd0;
-                        user_num1       <= 4'd0;
-                        user_num2       <= 4'd0;
-                        user_num3       <= 4'd0;
+                        user_num0       <= 3'd0;
+                        user_num1       <= 3'd0;
+                        user_num2       <= 3'd0;
+                        user_num3       <= 3'd0;
                     end
                 end
 
@@ -288,10 +288,10 @@ module FSM_Controller(
                         bet_count       <= 3'd0;
                         numbers_entered <= 3'd0;
 
-                        user_num0       <= 4'd0;
-                        user_num1       <= 4'd0;
-                        user_num2       <= 4'd0;
-                        user_num3       <= 4'd0;
+                        user_num0       <= 3'd0;
+                        user_num1       <= 3'd0;
+                        user_num2       <= 3'd0;
+                        user_num3       <= 3'd0;
                     end
                 end
 

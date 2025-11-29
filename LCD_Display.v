@@ -70,8 +70,15 @@ module LCD_Display(
             to_ascii = 8'd48 + d;
         end
     endfunction
-
-    reg [7:0] ascii_money [0:4];
+    function [7:0] disp_num;
+        input [2:0] n;
+        begin
+            if (n == 3'd0)
+                disp_num = 8'h20; // space when empty
+            else
+                disp_num = to_ascii(n + 4'd1); // show keypad digit (1~8)
+        end
+    endfunction    reg [7:0] ascii_money [0:4];
 
     always @(*) begin
         ascii_money[0] = to_ascii((money_clamped / 10000) % 10);
@@ -131,10 +138,10 @@ module LCD_Display(
                     l2[6] <= ascii_money[3];
                     l2[7] <= ascii_money[4];
                     l2[8] <= "]"; l2[9] <= ":"; l2[10] <= " "; 
-                    l2[11] <= to_ascii(user_num0); 
-                    l2[12] <= to_ascii(user_num1); 
-                    l2[13] <= to_ascii(user_num2);  
-                    l2[14] <= to_ascii(user_num3); 
+                    l2[11] <= disp_num(user_num0); 
+                    l2[12] <= disp_num(user_num1); 
+                    l2[13] <= disp_num(user_num2);  
+                    l2[14] <= disp_num(user_num3); 
                 end
 
                 // 3. BET_SELECT: 베팅 개수 선택
@@ -145,7 +152,7 @@ module LCD_Display(
                     l1[12] <= "1"; l1[13] <= "~"; l1[14] <= "4"; l1[15] <= "]";
                     
                     l2[0] <= "C"; l2[1] <= "N"; l2[2] <= "T"; l2[3] <= ":";
-                    l2[4] <= to_ascii(user_num0); l2[5] <= " "; 
+                    l2[4] <= disp_num(user_num0); l2[5] <= " "; 
 
                     l2[6] <= "O"; l2[7] <= "K";
                     l2[8] <= ":"; l2[9] <= "*"; l2[10] <= " "; l2[11] <= "C";
@@ -161,10 +168,10 @@ module LCD_Display(
                     
                     l2[0] <= "I"; l2[1] <= "N"; l2[2] <= "P"; l2[3] <= "U"; 
                     l2[4] <= "T"; l2[5] <= ":"; 
-                    l2[6] <= to_ascii(user_num0); 
-                    l2[7] <= to_ascii(user_num1); 
-                    l2[8] <= to_ascii(user_num2);  
-                    l2[9] <= to_ascii(user_num3); 
+                    l2[6] <= disp_num(user_num0); 
+                    l2[7] <= disp_num(user_num1); 
+                    l2[8] <= disp_num(user_num2);  
+                    l2[9] <= disp_num(user_num3); 
                     
                     l2[10] <= " "; l2[11] <= "C";
                     l2[12] <= "L"; l2[13] <= "R"; l2[14] <= ":"; l2[15] <= "#";
