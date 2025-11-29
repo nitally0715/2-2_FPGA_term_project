@@ -78,7 +78,9 @@ module LCD_Display(
             else
                 disp_num = to_ascii(n + 4'd1); // show keypad digit (1~8)
         end
-    endfunction    reg [7:0] ascii_money [0:4];
+    endfunction
+
+    reg [7:0] ascii_money [0:4];
 
     always @(*) begin
         ascii_money[0] = to_ascii((money_clamped / 10000) % 10);
