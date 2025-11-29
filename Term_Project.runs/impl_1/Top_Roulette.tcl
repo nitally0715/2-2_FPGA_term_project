@@ -125,7 +125,7 @@ set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
   set_param chipscope.maxJobs 2
-  set_param synth.incrementalSynthesisCache C:/Users/sosez/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-34732-DESKTOP-UGV0O34/incrSyn
+  set_param synth.incrementalSynthesisCache C:/Users/sosez/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-1208-DESKTOP-UGV0O34/incrSyn
   set_param xicom.use_bs_reader 1
   open_checkpoint Top_Roulette_routed.dcp
   set_property webtalk.parent_dir C:/Users/sosez/Logical_Design_Project/Term_Project/Term_Project.cache/wt [current_project]
