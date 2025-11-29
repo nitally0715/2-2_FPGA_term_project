@@ -11,16 +11,19 @@
 *.poli
 *.tcl.backup
 
-# Vivado generated folders
-.cache/
-.hw/
-.ip_user_files/
-.sim/
-.simulation/
-.Xil/
-runs/
+# Vivado generated folders (와일드카드 * 추가로 프로젝트 이름이 붙은 폴더도 감지)
+*.cache/
+*.hw/
+*.ip_user_files/
+*.sim/
+*.simulation/
+*.Xil/
+*.runs/
+*.gen/
 reports/
-project_*/         # Vivado가 자동으로 생성하는 project_xxx 폴더
+project_*/
+
+# Source/IP related
 *.srcs/sources_1/ip/
 *.srcs/sources_1/ipshared/
 *.srcs/sources_1/bd/
@@ -47,9 +50,12 @@ project_*/         # Vivado가 자동으로 생성하는 project_xxx 폴더
 *.key
 *.svf
 *.sdf
-*.jou
-*.pb
 *.rpt
+
+# Generated files shown in your screenshots
+*.bit
+*.vdi
+*.backup.vdi
 
 # Temporary and lock files
 *.tmp
