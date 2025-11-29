@@ -131,10 +131,10 @@ module LCD_Display(
                     l2[6] <= ascii_money[3];
                     l2[7] <= ascii_money[4];
                     l2[8] <= "]"; l2[9] <= ":"; l2[10] <= " "; 
-                    l2[11] <= to_ascii(user_num0 + 1); 
-                    l2[12] <= to_ascii(user_num1 + 1); 
-                    l2[13] <= to_ascii(user_num2 + 1);  
-                    l2[14] <= to_ascii(user_num3 + 1); 
+                    l2[11] <= to_ascii(user_num0); 
+                    l2[12] <= to_ascii(user_num1); 
+                    l2[13] <= to_ascii(user_num2);  
+                    l2[14] <= to_ascii(user_num3); 
                 end
 
                 // 3. BET_SELECT: 베팅 개수 선택
@@ -145,7 +145,7 @@ module LCD_Display(
                     l1[12] <= "1"; l1[13] <= "~"; l1[14] <= "4"; l1[15] <= "]";
                     
                     l2[0] <= "C"; l2[1] <= "N"; l2[2] <= "T"; l2[3] <= ":";
-                    l2[4] <= to_ascii(user_num0 + 1); l2[5] <= " "; 
+                    l2[4] <= to_ascii(user_num0); l2[5] <= " "; 
 
                     l2[6] <= "O"; l2[7] <= "K";
                     l2[8] <= ":"; l2[9] <= "*"; l2[10] <= " "; l2[11] <= "C";
@@ -161,10 +161,10 @@ module LCD_Display(
                     
                     l2[0] <= "I"; l2[1] <= "N"; l2[2] <= "P"; l2[3] <= "U"; 
                     l2[4] <= "T"; l2[5] <= ":"; 
-                    l2[6] <= to_ascii(user_num0 + 1); 
-                    l2[7] <= to_ascii(user_num1 + 1); 
-                    l2[8] <= to_ascii(user_num2 + 1);  
-                    l2[9] <= to_ascii(user_num3 + 1); 
+                    l2[6] <= to_ascii(user_num0); 
+                    l2[7] <= to_ascii(user_num1); 
+                    l2[8] <= to_ascii(user_num2);  
+                    l2[9] <= to_ascii(user_num3); 
                     
                     l2[10] <= " "; l2[11] <= "C";
                     l2[12] <= "L"; l2[13] <= "R"; l2[14] <= ":"; l2[15] <= "#";
