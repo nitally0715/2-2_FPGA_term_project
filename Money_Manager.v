@@ -25,7 +25,7 @@ module Money_Manager(
     // 초기 자본
     //==========================================================
     localparam INITIAL_MONEY = 16'd100;
-    localparam MAX_MONEY     = 16'd10000;
+    localparam MAX_MONEY     = 16'd110;
 
     //==========================================================
     // 배당 배수 계산 : bet_count에 따라 payout 배수 결정

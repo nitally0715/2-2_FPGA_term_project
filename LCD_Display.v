@@ -13,6 +13,7 @@ module LCD_Display(
     input  wire [15:0] current_money,
     input  wire        win_flag,
     input  wire        money_zero,
+    
     // 사용자 입력 KEY_PAD
     input  wire [1:0] num_store_idx,
     input  wire [3:0] user_num0,
@@ -81,6 +82,7 @@ module LCD_Display(
     endfunction
 
     reg [7:0] ascii_money [0:4];
+    reg [7:0] ascii_bet   [0:4];   
 
     always @(*) begin
         ascii_money[0] = to_ascii((money_clamped / 10000) % 10);
@@ -88,6 +90,13 @@ module LCD_Display(
         ascii_money[2] = to_ascii((money_clamped / 100)   % 10);
         ascii_money[3] = to_ascii((money_clamped / 10)    % 10);
         ascii_money[4] = to_ascii((money_clamped)         % 10);
+        
+        // ★ bet_amount 표시용
+        ascii_bet[0] = to_ascii((bet_amount / 10000) % 10);
+        ascii_bet[1] = to_ascii((bet_amount / 1000)  % 10);
+        ascii_bet[2] = to_ascii((bet_amount / 100)   % 10);
+        ascii_bet[3] = to_ascii((bet_amount / 10)    % 10);
+        ascii_bet[4] = to_ascii((bet_amount)         % 10);
     end
 
     //==========================================================
@@ -140,10 +149,11 @@ module LCD_Display(
                     l2[6] <= ascii_money[3];
                     l2[7] <= ascii_money[4];
                     l2[8] <= "]"; l2[9] <= ":"; l2[10] <= " "; 
-                    l2[11] <= disp_num(user_num0); 
-                    l2[12] <= disp_num(user_num1); 
-                    l2[13] <= disp_num(user_num2);  
-                    l2[14] <= disp_num(user_num3); 
+                    l2[11] <= ascii_bet[0];
+                    l2[12] <= ascii_bet[1];
+                    l2[13] <= ascii_bet[2];
+                    l2[14] <= ascii_bet[3];
+                    l2[15] <= ascii_bet[4];
                 end
 
                 // 3. BET_SELECT: 베팅 개수 선택
@@ -154,8 +164,13 @@ module LCD_Display(
                     l1[12] <= "1"; l1[13] <= "~"; l1[14] <= "4"; l1[15] <= "]";
                     
                     l2[0] <= "C"; l2[1] <= "N"; l2[2] <= "T"; l2[3] <= ":";
-                    l2[4] <= disp_num(user_num0); l2[5] <= " "; 
-
+                    
+                    if (bet_count == 3'd0)
+                        l2[4] <= 8'h20; // space
+                    else
+                        l2[4] <= to_ascii(bet_count);
+   
+                    l2[5] <= " ";
                     l2[6] <= "O"; l2[7] <= "K";
                     l2[8] <= ":"; l2[9] <= "*"; l2[10] <= " "; l2[11] <= "C";
                     l2[12] <= "L"; l2[13] <= "R"; l2[14] <= ":"; l2[15] <= "#";                    
