@@ -26,6 +26,9 @@ module FSM_Controller(
     output reg         start_spin,     // 룰렛 시작 트리거 (1클럭 펄스)
     output reg         update_money_req, // 잔액 갱신 요청 (1클럭)
     output reg         reset_round,    // 한 판/게임 리셋용 (1클럭)
+    
+    // [추가] 돈까지 초기화하는 강력한 리셋 신호
+    output reg         game_reset,
 
     // Hit_Check 용 유저 선택 번호 4개
     output reg  [2:0]  user_num0,
@@ -69,6 +72,7 @@ module FSM_Controller(
             start_spin       <= 1'b0;
             update_money_req <= 1'b0;
             reset_round      <= 1'b0;
+            game_reset       <= 1'b0;
 
             // 유저 번호 초기화
             user_num0       <= 3'd0;
@@ -83,6 +87,7 @@ module FSM_Controller(
             start_spin       <= 1'b0;
             update_money_req <= 1'b0;
             reset_round      <= 1'b0;
+            game_reset       <= 1'b0; // [자동 복구]
 
             case (state)
 
@@ -92,6 +97,7 @@ module FSM_Controller(
                 S_IDLE: begin
                     if (key_valid && key_value == 4'd10) begin // '*'
                         reset_round     <= 1'b1;   // Hit_Check, Money_Manager 등 라운드 관련 리셋
+                        game_reset      <= 1'b1;
                         bet_amount      <= 16'd0;
                         bet_count       <= 3'd0;
                         numbers_entered <= 3'd0;
@@ -267,6 +273,7 @@ module FSM_Controller(
                 S_GAME_OVER: begin
                     if (key_valid && key_value == 4'd10) begin
                         reset_round     <= 1'b1;
+                        game_reset      <= 1'b1; // [추가] 리셋
                         bet_amount      <= 16'd0;
                         bet_count       <= 3'd0;
                         numbers_entered <= 3'd0;
@@ -284,6 +291,7 @@ module FSM_Controller(
                 S_GAME_CLEAR: begin
                     if (key_valid && key_value == 4'd10) begin
                         reset_round     <= 1'b1;
+                        game_reset      <= 1'b1; // [추가] 리셋
                         bet_amount      <= 16'd0;
                         bet_count       <= 3'd0;
                         numbers_entered <= 3'd0;

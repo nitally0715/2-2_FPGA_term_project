@@ -75,6 +75,7 @@ module Top_Roulette(
     wire start_spin;
     wire update_money_req;
     wire reset_round;
+    wire game_reset;
 
     wire spin_done;
     wire win_flag;
@@ -100,7 +101,9 @@ module Top_Roulette(
         .clear_input(clear_input),
         .start_spin(start_spin),
         .update_money_req(update_money_req),
-        .reset_round(reset_round)
+        .reset_round(reset_round),
+        // [수정] FSM의 game_reset 출력 포트 연결
+        .game_reset(game_reset)
     );
 
     //==========================================================
@@ -254,7 +257,9 @@ module Top_Roulette(
         .current_money(current_money),
         .money_zero(money_zero),
         .money_10000(money_10000),
-        .win_flag_out(win_flag_out)
+        .win_flag_out(win_flag_out),
+        // [수정] Money_Manager의 game_reset 입력 포트 연결
+        .game_reset(game_reset)
     );
 
     //==========================================================

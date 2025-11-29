@@ -11,9 +11,6 @@
 *.poli
 *.tcl.backup
 
-# WebTalk Project Context 파일 무시
-*.wpc
-
 # Vivado generated folders (와일드카드 * 추가로 프로젝트 이름이 붙은 폴더도 감지)
 *.cache/
 *.hw/
@@ -70,4 +67,7 @@ project_*/
 Thumbs.db
 *.swp
 *.swo
-Term_Project.cache/wt/project.wpc
+/Term_Project.hw
+/Term_Project.runs
+/Term_Project.cache
+Term_Project.xpr
