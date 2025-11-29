@@ -135,49 +135,49 @@ module Top_Roulette(
     //==========================================================
     reg [3:0] prev_state;
     reg [1:0] num_store_idx;
-    reg [2:0] user_num0, user_num1, user_num2, user_num3;
+    reg [3:0] user_num0, user_num1, user_num2, user_num3;
 
     always @(posedge clk or posedge rst) begin
         if (rst) begin
             prev_state    <= S_IDLE;
             num_store_idx <= 2'd0;
-            user_num0     <= 3'd0;
-            user_num1     <= 3'd0;
-            user_num2     <= 3'd0;
-            user_num3     <= 3'd0;
+            user_num0       <= 4'd0;
+            user_num1       <= 4'd0;
+            user_num2       <= 4'd0;
+            user_num3       <= 4'd0;
         end else begin
             prev_state <= fsm_state;
 
             if (reset_round || clear_input) begin
                 num_store_idx <= 2'd0;
-                user_num0     <= 3'd0;
-                user_num1     <= 3'd0;
-                user_num2     <= 3'd0;
-                user_num3     <= 3'd0;
+                user_num0       <= 4'd0;
+                user_num1       <= 4'd0;
+                user_num2       <= 4'd0;
+                user_num3       <= 4'd0;
             end
             else begin
                 if (prev_state != S_NUMBER_INPUT && fsm_state == S_NUMBER_INPUT) begin
                     num_store_idx <= 2'd0;
-                    user_num0     <= 3'd0;
-                    user_num1     <= 3'd0;
-                    user_num2     <= 3'd0;
-                    user_num3     <= 3'd0;
+                    user_num0       <= 4'd0;
+                    user_num1       <= 4'd0;
+                    user_num2       <= 4'd0;
+                    user_num3       <= 4'd0;
                 end
                 else if (fsm_state == S_NUMBER_INPUT && key_valid) begin
                     if (key_value == 4'd11) begin   // '#'
                         num_store_idx <= 2'd0;
-                        user_num0     <= 3'd0;
-                        user_num1     <= 3'd0;
-                        user_num2     <= 3'd0;
-                        user_num3     <= 3'd0;
+                        user_num0       <= 4'd0;
+                        user_num1       <= 4'd0;
+                        user_num2       <= 4'd0;
+                        user_num3       <= 4'd0;
                     end
                     else if (key_value >= 4'd1 && key_value <= 4'd8) begin
                         if (num_store_idx < 2'd4) begin
                             case (num_store_idx)
-                                2'd0: user_num0 <= key_value[2:0] - 3'd1;
-                                2'd1: user_num1 <= key_value[2:0] - 3'd1;
-                                2'd2: user_num2 <= key_value[2:0] - 3'd1;
-                                2'd3: user_num3 <= key_value[2:0] - 3'd1;
+                                2'd0: user_num0 <= key_value;
+                                2'd1: user_num1 <= key_value;
+                                2'd2: user_num2 <= key_value;
+                                2'd3: user_num3 <= key_value;
                             endcase
                             if (num_store_idx < bet_count - 1 && num_store_idx < 2'd3)
                                 num_store_idx <= num_store_idx + 2'd1;
@@ -190,18 +190,22 @@ module Top_Roulette(
 
     //==========================================================
     // 5) Hit_Check
+    wire [2:0] hit_num0 = (user_num0 == 4'd0) ? 3'd0 : (user_num0 - 4'd1);
+    wire [2:0] hit_num1 = (user_num1 == 4'd0) ? 3'd0 : (user_num1 - 4'd1);
+    wire [2:0] hit_num2 = (user_num2 == 4'd0) ? 3'd0 : (user_num2 - 4'd1);
+    wire [2:0] hit_num3 = (user_num3 == 4'd0) ? 3'd0 : (user_num3 - 4'd1);
+
+
     //==========================================================
     wire [2:0] hit_count;
 
     Hit_Check hit_checker(
-        .clk       (clk),
-        .rst       (rst),
         .bet_count  (bet_count),
         .result_pos (result_pos),
-        .user_num0  (user_num0),
-        .user_num1  (user_num1),
-        .user_num2  (user_num2),
-        .user_num3  (user_num3),
+        .user_num0  (hit_num0),
+        .user_num1  (hit_num1),
+        .user_num2  (hit_num2),
+        .user_num3  (hit_num3),
         .win_flag   (win_flag),
         .hit_count  (hit_count)
     );

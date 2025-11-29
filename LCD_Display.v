@@ -15,10 +15,10 @@ module LCD_Display(
     input  wire        money_zero,
     // 사용자 입력 KEY_PAD
     input  wire [1:0] num_store_idx,
-    input  wire [2:0] user_num0,
-    input  wire [2:0] user_num1,
-    input  wire [2:0] user_num2,
-    input  wire [2:0] user_num3,
+    input  wire [3:0] user_num0,
+    input  wire [3:0] user_num1,
+    input  wire [3:0] user_num2,
+    input  wire [3:0] user_num3,
 
 
     // LCD 출력 버퍼
@@ -71,12 +71,12 @@ module LCD_Display(
         end
     endfunction
     function [7:0] disp_num;
-        input [2:0] n;
+        input [3:0] n;
         begin
             if (n == 3'd0)
                 disp_num = 8'h20; // space when empty
             else
-                disp_num = to_ascii(n + 4'd1); // show keypad digit (1~8)
+                disp_num = to_ascii(n); // show keypad digit (1~8)
         end
     endfunction
 
